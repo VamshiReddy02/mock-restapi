@@ -7,8 +7,4 @@ services:
     startCommand: node server.js
     envVars:
       - key: DB_FILE
-        value: /var/data/employees.db
-    disk:
-      name: data
-      mountPath: /var/data
-      sizeGB: 1
+        value: ./employees.db   # lives on ephemeral FS
