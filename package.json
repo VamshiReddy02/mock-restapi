@@ -1,0 +1,19 @@
+{
+  "name": "employees-api",
+  "version": "1.0.0",
+  "description": "Express + SQLite REST API for Employees",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "reset:db": "node db.js --reset"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.0",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
