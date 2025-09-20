@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: employees-api
+    env: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: node server.js
+    envVars:
+      - key: DB_FILE
+        value: /var/data/employees.db
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1

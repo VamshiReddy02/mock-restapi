@@ -1,8 +1,14 @@
 // db.js
 import Database from 'better-sqlite3';
 import fs from 'fs';
+import path from 'path';
 
-const db = new Database('./employees.db');
+const defaultPath = './data/employees.db';                    // local dev
+const dbFile = process.env.DB_FILE || defaultPath;
+const dir = path.dirname(dbFile);
+if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+const db = new Database(dbFile);
 
 // Create table if not exists
 db.exec(`
